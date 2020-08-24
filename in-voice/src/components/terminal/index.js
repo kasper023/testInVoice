@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Table, Button, Space, Modal, Input, Form } from 'antd';
 
 function Terminal() {
@@ -9,6 +9,14 @@ function Terminal() {
         name: ``,
         description: ``
     })
+
+    const getData = () => {
+      if(localStorage.getItem('terminals')) {
+        setTerminals(JSON.parse(localStorage.getItem('terminals')))
+      }
+    }
+
+    useEffect(getData, [])
 
     const openModal = () => {
         setVisible(true);
@@ -21,12 +29,17 @@ function Terminal() {
     const handleOk = () => {
         if (newData.name && newData.description) {
             handleCancel();
-            setTerminals([...terminals, {key: terminals.length, name: newData.name, description: newData.description}]);
+            const data = [...terminals, {key: terminals.length, name: newData.name, description: newData.description}]
+            setTerminals(data);
+            localStorage.setItem('terminals', JSON.stringify(data));
+            setNewData({});
         }
        
     }
     const deleteTerminal = index => {
-      setTerminals(terminals.filter((item) => item.key != index))
+      const data = terminals.filter((item) => item.key != index)
+      setTerminals(data)
+      localStorage.setItem('terminals', JSON.stringify(data))
     }
     const onChange = e => {
         const { name, value } = e.target;

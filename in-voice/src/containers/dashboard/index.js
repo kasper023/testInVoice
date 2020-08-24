@@ -29,12 +29,13 @@ function Dashboard() {
     useEffect(getUser, [])
     
     return (
-        <Layout>
+        <Layout style={{height: '100%'}}>
             <Sider
                 trigger={null}
                 style={{
                     width: '20vw',
-                    height: '100vh',
+                    maxHeight: '200vh',
+                    minHeight: '100vh',
                     padding: '20px 0',
                     position: 'relative'
                 }}
@@ -71,7 +72,7 @@ function Dashboard() {
                     <Route exact path={`/dashboard/terminals`} component={Terminal}/>
                     <Route exact path={`/dashboard/buyers`} component={Buyers}/>
                     <Route exact path={`/dashboard/buyer/:id`} component={Buyer}/>
-                    {/* <Route path='*' exact  component={Miscallenous}/> */}
+                    <Route path = {`/dashboard/`} exact component={Miscallenous}/>
                 </Content>
             </Layout>
         </Layout>

@@ -3,7 +3,8 @@ import { Table, Button, Space, Modal, Input, Form } from 'antd';
 import { Link } from 'react-router-dom';
 
 function Buyers() {
-    const [data, setData] = useState([{
+    const [data, setData] = useState([
+      {
         key: '1',
         name: 'Eska',
         average: 5000,
@@ -11,19 +12,104 @@ function Buyers() {
         total: 123123123
       },
       {
-          key: '2',
-          name: 'Eska Sarinov',
-          average: 3000,
-          purchaseAmount: 25,
-          total: 3312312
-        },
-        {
-          key: '3',
-          name: 'Zhaneka Shaikassym',
-          average: 10000,
-          purchaseAmount: 40,
-          total: 100000
-        }])
+        key: '2',
+        name: 'Eska Sarinov',
+        average: 3000,
+        purchaseAmount: 25,
+        total: 3312312
+      },
+      {
+        key: '3',
+        name: 'Zhaneka Shaikassym',
+        average: 10000,
+        purchaseAmount: 40,
+        total: 100000
+      },
+      {
+        key: '4',
+        name: 'Eska',
+        average: 5000,
+        purchaseAmount: 50,
+        total: 123123123
+      },
+      {
+        key: '5',
+        name: 'Eska Sarinov',
+        average: 3000,
+        purchaseAmount: 25,
+        total: 3312312
+      },
+      {
+        key: '6',
+        name: 'Zhaneka Shaikassym',
+        average: 10000,
+        purchaseAmount: 40,
+        total: 100000
+      },
+      {
+        key: '7',
+        name: 'Eska',
+        average: 5000,
+        purchaseAmount: 50,
+        total: 123123123
+      },
+      {
+        key: '8',
+        name: 'Eska Sarinov',
+        average: 3000,
+        purchaseAmount: 25,
+        total: 3312312
+      },
+      {
+        key: '9',
+        name: 'Zhaneka Shaikassym',
+        average: 10000,
+        purchaseAmount: 40,
+        total: 100000
+      },
+      {
+        key: '10',
+        name: 'Eska',
+        average: 5000,
+        purchaseAmount: 50,
+        total: 123123123
+      },
+      {
+        key: '11',
+        name: 'Eska Sarinov',
+        average: 3000,
+        purchaseAmount: 25,
+        total: 3312312
+      },
+      {
+        key: '12',
+        name: 'Zhaneka Shaikassym',
+        average: 10000,
+        purchaseAmount: 40,
+        total: 100000
+      },
+      {
+        key: '13',
+        name: 'Eska',
+        average: 5000,
+        purchaseAmount: 50,
+        total: 123123123
+      },
+      {
+        key: '14',
+        name: 'Eska Sarinov',
+        average: 3000,
+        purchaseAmount: 25,
+        total: 3312312
+      },
+      {
+        key: '15',
+        name: 'Zhaneka Shaikassym',
+        average: 10000,
+        purchaseAmount: 40,
+        total: 100000
+      },
+      ])
     const columns = [
         {
             title: 'ID',
@@ -40,19 +126,19 @@ function Buyers() {
         {
           title: 'Average',
           dataIndex: 'average',
-          defaultSortOrder: 'descend',
+          // defaultSortOrder: 'descend',
           sorter: (a, b) => a.average - b.average,
         },
         {
             title: 'PurchaseAmount',
             dataIndex: 'purchaseAmount',
-            defaultSortOrder: 'descend',
+            // defaultSortOrder: 'descend',
             sorter: (a, b) => a.purchaseAmount - b.purchaseAmount,
         },
         {
             title: 'Total',
             dataIndex: 'total',
-            defaultSortOrder: 'descend',
+            // defaultSortOrder: 'descend',
             sorter: (a, b) => a.total - b.total,
         },
        
