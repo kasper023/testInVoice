@@ -25,9 +25,6 @@ function Terminal() {
         }
        
     }
-    const getData = terminals => {
-        return setTerminals(terminals)
-    }
     const deleteTerminal = index => {
       setTerminals(terminals.filter((item) => item.key != index))
     }
@@ -56,7 +53,7 @@ function Terminal() {
           key: 'action',
           render: (text, record) => (
             <Space size="middle">
-              <p onClick={() => deleteTerminal(record.key)}>Delete</p>
+              <p style={{cursor: 'pointer'}} onClick={() => deleteTerminal(record.key)}>Delete</p>
             </Space>
           ),
         },
@@ -64,10 +61,12 @@ function Terminal() {
       
       const data = [
         {
+          key: 0,
           name: 'John Brown',
           description: 'New York No. 1 Lake Park',
         },
         {
+          key: 1,
           name: 'Jim Green',
           description: 'London No. 1 Lake Park'
         },
@@ -80,7 +79,7 @@ function Terminal() {
             >
               Добавить терминал
             </Button>
-            <Table columns={columns} dataSource={terminals} />
+            <Table columns={columns} dataSource={terminals} pagination={{pageSizeOptions: [5, 10, 15], defaultPageSize: 5, showSizeChanger: true}}/>
             <Modal
           title="Добавить терминал"
           visible={visible}
@@ -89,10 +88,10 @@ function Terminal() {
         >
             <Form>
                 <Form.Item>
-                    <Input name="name" value={newData.name} onChange={onChange}/>
+                    <Input name="name" placeholder='Name' value={newData.name} onChange={onChange}/>
                 </Form.Item>
                 <Form.Item>
-                    <Input name="description" value={newData.description} onChange={onChange}/>
+                    <Input name="description" placeholder='Description' value={newData.description} onChange={onChange}/>
                 </Form.Item>
                 
             </Form>

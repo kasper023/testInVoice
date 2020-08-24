@@ -55,7 +55,7 @@ function Signin(props) {
                         },
                     ]}
                 >
-                    <Input placeholder="Логин" />
+                    <Input placeholder="Github аккаунт" />
                 </Form.Item>
 
                 <Form.Item
@@ -63,6 +63,7 @@ function Signin(props) {
                     rules={[
                         {
                             required: true,
+                            placeholder: 'Password', 
                             message: 'Please input your password!',
                         },
                     ]}
