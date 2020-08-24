@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+in-voice/node_modules
+in-voice/.pnp
+.pnp.js
+
+# testing
+in-voice/coverage
+
+# production
+in-voice/build
+
+# misc
+in-voice/.DS_Store
+in-voice/.env.local
+in-voice/.env.development.local
+in-voice/.env.test.local
+in-voice/.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
