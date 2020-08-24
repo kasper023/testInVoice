@@ -10,7 +10,7 @@ function Buyer(props) {
              <p>Имя: {props.location.state.name}</p>
              <p>Средний чек: {props.location.state.average}</p>
              <p>Кол-во покупок: {props.location.state.purchaseAmount}</p>
-             <p>Общий выручка: {props.location.state.total}</p>
+             <p>Общая выручка: {props.location.state.total}</p>
         </div>
     )
 }

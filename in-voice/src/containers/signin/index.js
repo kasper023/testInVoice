@@ -72,7 +72,7 @@ function Signin(props) {
                 </Form.Item>
 
                 <Form.Item {...tailLayout}>
-                    <Button type="primary" htmlType="submit">Submit</Button>
+                    <Button type="primary" htmlType="submit">Вход</Button>
                 </Form.Item>
             </Form>
         </div>

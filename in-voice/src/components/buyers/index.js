@@ -127,25 +127,25 @@ function Buyers() {
             render: (text, record) => <Link to={{pathname: `/dashboard/buyer/${record.key}`, state: {key: record.key, name: record.name, average: record.average, purchaseAmount: record.purchaseAmount, total: record.total}}}>{text}</Link>
         },
         {
-          title: 'Name',
+          title: 'Имя',
           dataIndex: 'name',
           filters: valuesForFilter(data.map((item) => ({text: item.name, value: item.name}))),
           onFilter: (value, record) => record.name.indexOf(value) === 0,
         },
         {
-          title: 'Average',
+          title: 'Средний чек',
           dataIndex: 'average',
           // defaultSortOrder: 'descend',
           sorter: (a, b) => a.average - b.average,
         },
         {
-            title: 'PurchaseAmount',
+            title: 'Кол-во покупок',
             dataIndex: 'purchaseAmount',
             // defaultSortOrder: 'descend',
             sorter: (a, b) => a.purchaseAmount - b.purchaseAmount,
         },
         {
-            title: 'Total',
+            title: 'Общая выручка',
             dataIndex: 'total',
             // defaultSortOrder: 'descend',
             sorter: (a, b) => a.total - b.total,
