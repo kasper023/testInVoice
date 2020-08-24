@@ -110,6 +110,15 @@ function Buyers() {
         total: 100000
       },
       ])
+      const valuesForFilter = (data) => {
+        let flags = [], output = [], l = data.length;
+        for(let i = 0; i < l; i++) {
+            if( flags[data[i].text]) continue;
+            flags[data[i].text] = true;
+            output.push(data[i]);
+        }
+        return output
+      }
     const columns = [
         {
             title: 'ID',
@@ -120,7 +129,7 @@ function Buyers() {
         {
           title: 'Name',
           dataIndex: 'name',
-          filters: data.map((item) => ({text: item.name, value: item.name})),
+          filters: valuesForFilter(data.map((item) => ({text: item.name, value: item.name}))),
           onFilter: (value, record) => record.name.indexOf(value) === 0,
         },
         {
